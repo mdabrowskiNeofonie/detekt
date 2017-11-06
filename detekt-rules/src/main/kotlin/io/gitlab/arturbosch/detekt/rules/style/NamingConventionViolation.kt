@@ -30,7 +30,7 @@ class NamingConventionViolation(config: Config = Config.empty) : Rule(config) {
 			Debt.FIVE_MINS)
 
 	private val variablePattern = Regex(valueOrDefault(VARIABLE_PATTERN, "^(_)?[a-z$][a-zA-Z$0-9]*$"))
-	private val constantPattern = Regex(valueOrDefault(CONSTANT_PATTERN, "^([A-Z_]*|serialVersionUID)$"))
+	private val constantPattern = Regex(valueOrDefault(CONSTANT_PATTERN, "^([A-Z_][A-Z0-9_]*|serialVersionUID)$"))
 	private val methodPattern = Regex(valueOrDefault(METHOD_PATTERN, "^[a-z$][a-zA-Z$0-9]*$"))
 	private val classPattern = Regex(valueOrDefault(CLASS_PATTERN, "^[A-Z$][a-zA-Z$]*$"))
 	private val enumEntryPattern = Regex(valueOrDefault(ENUM_PATTERN, "^[A-Z$][a-zA-Z_$]*$"))
